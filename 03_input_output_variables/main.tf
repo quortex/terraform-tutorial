@@ -36,8 +36,8 @@ resource "aws_instance" "example" {
   ami           = var.ami
   instance_type = var.instance_type
 
-  subnet_id     = aws_subnet.main.id // utilisation d'un attribut de sortie d'une autre ressource
-  
+  subnet_id = aws_subnet.main.id // utilisation d'un attribut de sortie d'une autre ressource
+
   tags = {
     Name = "HelloWorld-VM"
   }

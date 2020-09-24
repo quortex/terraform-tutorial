@@ -1,16 +1,16 @@
 resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.vpc_cidr_block
 
   tags = {
-    Name = "HelloWorld-MainVPC"
+    Name = var.name
   }
 }
 
 resource "aws_subnet" "main" {
   vpc_id     = aws_vpc.main.id // utilisation d'un attribut de sortie d'une autre ressource
-  cidr_block = "10.0.1.0/24"
+  cidr_block = var.subnet_cidr_block
 
   tags = {
-    Name = "HelloWorld-MainSubnet"
+    Name = var.name
   }
 }

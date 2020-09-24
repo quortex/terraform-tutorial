@@ -36,8 +36,8 @@ resource "aws_instance" "example" {
   ami           = "ami-0de12f76efe134f2f"
   instance_type = "t2.micro"
 
-  subnet_id     = aws_subnet.main.id // utilisation d'un attribut de sortie d'une autre ressource
-  
+  subnet_id = aws_subnet.main.id // utilisation d'un attribut de sortie d'une autre ressource
+
   tags = {
     Name = "HelloWorld-VM"
   }
