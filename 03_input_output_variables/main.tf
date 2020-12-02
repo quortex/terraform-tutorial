@@ -11,7 +11,7 @@ terraform {
 // Configuration du provider AWS
 provider "aws" {
   profile = "default"
-  region  = "eu-west-3"
+  region  = "eu-west-2"
 }
 
 // Déclaration des ressources

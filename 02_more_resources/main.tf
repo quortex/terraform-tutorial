@@ -11,7 +11,7 @@ terraform {
 // Configuration du provider AWS
 provider "aws" {
   profile = "default"
-  region  = "eu-west-3"
+  region  = "eu-west-2"
 }
 
 // Déclaration des ressources
@@ -34,7 +34,7 @@ resource "aws_subnet" "main" {
 }
 
 resource "aws_instance" "example" {
-  ami           = "ami-0de12f76efe134f2f"
+  ami           = "ami-065fb68427940c3ae" # ID of the Amazon Linux image in eu-west-2 (named "amzn2-ami-hvm-2.0.20201126.0-x86_64-ebs")
   instance_type = "t2.micro"
 
   subnet_id = aws_subnet.main.id // utilisation d'un attribut de sortie d'une autre ressource
